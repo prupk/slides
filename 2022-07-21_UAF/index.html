@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.165">
+  <meta name="author" content="\color{green}{\textit{Muhammad Yaseen}}">
+  <title>\color{green}{\textit{Design &amp; Analysis of}} \color{green}{\textit{Field Experiments}}</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+
+  <script src="index_files/libs/clipboard/clipboard.min.js"></script>
+  <script src="index_files/libs/quarto-html/tabby.min.js"></script>
+  <script src="index_files/libs/quarto-html/popper.min.js"></script>
+  <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+  <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.7em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > :last-child,
+  .callout.callout-captioned .callout-body > div > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="center">
+  <h1 class="title"><span class="math inline">\(\color{green}{\textit{Design &amp; Analysis of}}\)</span> <span class="math inline">\(\color{green}{\textit{Field Experiments}}\)</span></h1>
+  <p class="author"><span class="math inline">\(\color{green}{\textit{Muhammad Yaseen}}\)</span></p>
+  <p class="institute"></p>
+  <p class="date"><span class="math inline">\(\color{green}{\textit{}}\)</span></p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Contents</h2>
+<ul>
+<li><a href="#/motivation">Motivation</a></li>
+<li><a href="#/introduction-2">Introduction</a></li>
+<li><a href="#/design-analysis">Design &amp; Analysis</a></li>
+<li><a href="#/basic-principles-of-experimental-design">Basic Principles of Experimental Design</a></li>
+<li><a href="#/selection-of-superior-stable-genotypes">Selection of Superior &amp; Stable Genotypes</a></li>
+<li><a href="#/path-analysis">Path Analysis</a></li>
+<li><a href="#/references">References</a></li>
+</ul>
+</nav>
+</section>
+
+<section>
+<section id="motivation" class="title-slide slide level1 center">
+<h1>Motivation</h1>
+
+</section>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="images/BiplotAMMI.png" width="1168" class="r-stretch quarto-figure-center"></section>
+<section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="images/BiplotGGE.png" width="1168" class="r-stretch quarto-figure-center"></section>
+<section id="design" class="slide level2">
+<h2>Design</h2>
+<h3 id="homogeneous-experimental-material">Homogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="design-1" class="slide level2">
+<h2>Design</h2>
+<h3 id="homogeneous-experimental-material-1">Homogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate two factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) &amp; each treatment combination replicated three times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="design-2" class="slide level2">
+<h2>Design</h2>
+<h3 id="heterogeneous-experimental-material">Heterogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="design-3" class="slide level2">
+<h2>Design</h2>
+<h3 id="heterogeneous-experimental-material-1">Heterogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate two factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) &amp; each treatment combination replicated three times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="design-4" class="slide level2">
+<h2>Design</h2>
+<h3 id="heterogeneous-experimental-material-2">Heterogeneous Experimental Material</h3>
+<ul>
+<li><p>Want to evaluate two factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) &amp; each treatment combination replicated three times</p></li>
+<li><p>Factor <span class="math inline">\(A\)</span> requires large EUs &amp; factor <span class="math inline">\(B\)</span> can be applied to small EUs</p></li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="design-5" class="slide level2">
+<h2>Design</h2>
+<h3 id="heterogeneous-experimental-material-3">Heterogeneous Experimental Material</h3>
+<ul>
+<li><p>Want to evaluate two factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) &amp; each treatment combination replicated three times</p></li>
+<li><p>Both factors <span class="math inline">\(A\)</span> &amp; <span class="math inline">\(B\)</span> require large EUs</p></li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="analysis" class="slide level2">
+<h2>Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Analysis</strong></p>
+</div>
+<div class="callout-content">
+<div id="exm-exmp1" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 </strong></span></p>
+<p>A researcher has to evaluate ten wheat varieties in five different research stations for his research. He knows there is one directional soil fertility trend in each research station. Propose an efficient experimental design with its layout and proper randomization for this situation. Provide guidelines to analyze the data giving different sources of variation and their corresponding degrees of freedom in the ANOVA table and suggest any method(s) for inferences beyond ANOVA.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-2" class="slide level2">
+<h2>Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Analysis</strong></p>
+</div>
+<div class="callout-content">
+<div id="exm-exmp2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 </strong></span>An experiment was conducted to test the effect of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil.</p>
+<p><strong>Treatments:</strong></p>
+<ol type="1">
+<li>No use of sulphur (Control)</li>
+<li>Application of sulphur in fall (Fall)</li>
+<li>Application of sulphur in spring (Spring)</li>
+</ol>
+<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
+<p><strong>Response:</strong> Scab Index</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-4" class="slide level2 smaller">
+<h2>Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Analysis</strong></p>
+</div>
+<div class="callout-content">
+<div id="exm-exmp3" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 </strong></span>An experiment was conducted to test the effect of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil.</p>
+<p><strong>Treatments:</strong></p>
+<ol type="1">
+<li>No use of sulphur (Control)</li>
+<li>App. of 300 lb. per acre sulphur in fall (F3)</li>
+<li>App. of 600 lb. per acre sulphur in fall (F6)</li>
+<li>App. of 900 lb. per acre sulphur in fall (F9)</li>
+<li>App. of 300 lb. per acre sulphur in spring (S3)</li>
+<li>App. of 600 lb. per acre sulphur in spring (S6)</li>
+<li>App. of 900 lb. per acre sulphur in spring (S9)</li>
+</ol>
+<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
+<p><strong>Response:</strong> Scab Index</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-6" class="slide level2">
+<h2>Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Analysis</strong></p>
+</div>
+<div class="callout-content">
+<div id="exm-exmp4" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 </strong></span>An experiment was conducted to test the effect of <span class="math inline">\(N\)</span> &amp; <span class="math inline">\(P\)</span> on wheat grain yield.</p>
+<p><strong>Treatments:</strong></p>
+<ol type="1">
+<li>Low <span class="math inline">\(N\)</span> &amp; Low <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{0}P_{0}\right)\)</span></li>
+<li>Low <span class="math inline">\(N\)</span> &amp; High <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{0}P_{1}\right)\)</span></li>
+<li>High <span class="math inline">\(N\)</span> &amp; Low <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{1}P_{0}\right)\)</span></li>
+<li>High <span class="math inline">\(N\)</span> &amp; High <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{1}P_{1}\right)\)</span></li>
+</ol>
+<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
+<p><strong>Response:</strong> Yield (Kg) per plot</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="introduction-2" class="title-slide slide level1 center">
+<h1>Introduction</h1>
+
+</section>
+<section id="introduction-3" class="slide level2">
+<h2>Introduction</h2>
+<p>&nbsp; &nbsp;</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<blockquote>
+<p><span class="math inline">\(\color{green}{\textit{In God we trust,}}\)</span> <span class="math inline">\(\color{green}{\textit{all others must bring data.}}\)</span></p>
+</blockquote>
+</div><div class="column" style="width:60%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/WEdwardsDeming.jpeg" width="100"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction-4" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li><blockquote>
+<p><span class="math inline">\(\color{green}{\textit{In God we trust, all others must bring data.}}\)</span><br>
+(<span class="math inline">\(\color{black}{\textit{William E. Deming}}\)</span>)</p>
+</blockquote></li>
+</ul>
+<p>&nbsp; &nbsp;</p>
+<div>
+<ul>
+<li class="fragment"><blockquote>
+<p><span class="math inline">\(\color{green}{\textit{Statistical thinking will one day be as necessary a}}\)</span> <span class="math inline">\(\color{green}{\textit{qualification for efficient citizenship as the ability}}\)</span> <span class="math inline">\(\color{green}{\textit{to read &amp; write.}}\)</span><br>
+(<span class="math inline">\(\color{black}{\textit{H.G. Wells}}\)</span>)</p>
+</blockquote></li>
+</ul>
+</div>
+</section>
+<section id="introduction-5" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li><blockquote>
+<p><span class="math inline">\(\color{green}{\textit{To call in the statistician after the experiment is}}\)</span> <span class="math inline">\(\color{green}{\textit{done may be no more than asking him to perform}}\)</span> <span class="math inline">\(\color{green}{\textit{a postmortem examination: he may be able to say}}\)</span> <span class="math inline">\(\color{green}{\textit{what the experiment died of.}}\)</span><br>
+(<span class="math inline">\(\color{black}{\textit{R. A. Fisher}}\)</span>)</p>
+</blockquote></li>
+</ul>
+<div>
+<ul>
+<li class="fragment"><blockquote>
+<p><span class="math inline">\(\color{green}{\textit{If all you have is a hammer, everything looks like}}\)</span> <span class="math inline">\(\color{green}{\textit{a nail.}}\)</span><br>
+(<span class="math inline">\(\color{black}{\textit{Abraham Maslow}}\)</span>)</p>
+</blockquote></li>
+</ul>
+</div>
+</section>
+<section id="introduction-6" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="introduction-7" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="introduction-8" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="introduction-9" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="introduction-10" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="decision-review-system" class="slide level2">
+<h2>Decision Review System</h2>
+<iframe width="1000" height="550" src="https://www.youtube.com/embed/ZPNUfUk3VNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</section>
+<section id="medical-laboratory-test" class="slide level2">
+<h2>Medical Laboratory Test</h2>
+<iframe width="1000" height="550" src="https://www.youtube.com/embed/R0gldekyvLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</section>
+<section id="karachi-stock-exchange" class="slide level2">
+<h2>Karachi Stock Exchange</h2>
+<iframe width="1000" height="550" src="https://www.youtube.com/embed/jcvnGJF7GVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</section>
+<section id="heavy-rain-in-lahore" class="slide level2">
+<h2>Heavy Rain in Lahore</h2>
+<iframe width="1000" height="550" src="https://www.youtube.com/embed/WIhUuJPpa84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</section>
+<section id="flood-in-pakistan-2010" class="slide level2">
+<h2>Flood in Pakistan 2010</h2>
+<iframe width="1000" height="550" src="https://www.youtube.com/embed/RNPY3LfnKLU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</section>
+<section id="drought-in-pakistan" class="slide level2">
+<h2>Drought in Pakistan</h2>
+<iframe width="1000" height="550" src="https://www.youtube.com/embed/3kPBgwgrU_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</section>
+<section id="wheat-crop-in-pakistan" class="slide level2">
+<h2>Wheat Crop in Pakistan</h2>
+<iframe width="1000" height="550" src="https://www.youtube.com/embed/Ryi0oZV-fd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</section>
+<section id="design-of-field-experiments" class="slide level2">
+<h2>Design of Field Experiments</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Design</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>The actual arrangement of the treatments in an experimental plan using a rule of assigning the treatments to EUs</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-of-field-experiments" class="slide level2 smaller">
+<h2>Analysis of Field Experiments</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Statistical Analysis</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ul>
+<li class="fragment">Statistical Analysis of the data obtained from field experiments
+<ul>
+<li class="fragment">Linear Models
+<ul>
+<li class="fragment">Regression Analysis</li>
+<li class="fragment">Analysis of Variance (ANOVA)</li>
+<li class="fragment">Analysis of Covariance (ANCOVA)</li>
+</ul></li>
+<li class="fragment">Generalized Linear Models (GLM)</li>
+<li class="fragment">Linear Mixed Models (LMM)</li>
+<li class="fragment">Generalized Linear Mixed Models (GLMM)</li>
+<li class="fragment">Genotype <span class="math inline">\(\times\)</span> Environment Interaction Analysis
+<ul>
+<li class="fragment">Linear, Bilinear, and Mixed Models</li>
+<li class="fragment">AMMI, GGE, Factorial Regression</li>
+</ul></li>
+<li class="fragment">Path Analysis</li>
+<li class="fragment">Bayesian Analysis, etc</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="design-analysis" class="title-slide slide level1 center">
+<h1>Design &amp; Analysis</h1>
+
+</section>
+<section id="scientific-experimentation" class="slide level2">
+<h2>Scientific Experimentation</h2>
+
+<img data-src="images/LogicalStepsScientificExperimentation.png" width="562" class="r-stretch quarto-figure-center"></section>
+<section id="three-aspects-of-design" class="slide level2 smaller">
+<h2>Three Aspects of Design</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Treatment Design</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>The treatment design determines the treatments to be included in the study: which treatments should we choose &amp; how many?</li>
+<li>The treatments may be determined by various treatment factors and level combinations of such factors.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Error-Control Design</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Nature of Experimental Design to control and minimize Experimental Error</li>
+<li>The actual arrangement of the treatments in an experimental plan using a rule of assigning the treatments to EUs</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Sampling &amp; Observation Design</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Determines at which level observations are being taken and what kinds of observations are being taken</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="treatment-design-1" class="slide level2">
+<h2>Treatment Design</h2>
+
+<img data-src="images/TreatmentStr2.png" width="364" class="r-stretch quarto-figure-center"></section>
+<section id="quantitative-treatments" class="slide level2">
+<h2>Quantitative Treatments</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Quantitative Treatments</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Four different amounts of nitrogen (N) fertilizer (0, 50, 100, 150 kg/ha)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Objectives</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Quantify the dependency of Yield on amounts of nitrogen</li>
+<li>Find the optimum amount of nitrogen for maximum Yield</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Statistical Methods</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Regression Analysis (Trend/Curve Analysis, or Response Surface Methodology)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="qualitative-treatments" class="slide level2">
+<h2>Qualitative Treatments</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Qualitative Treatments</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Four Wheat Varieties (V1, V2, V3, V4)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Objectives</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Comparing mean Yield for different Wheat Varieties</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Statistical Methods</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Analysis of Variance (ANOVA)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="qualitative-structuredless-treatments" class="slide level2 smaller">
+<h2>Qualitative Structuredless Treatments</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Qualitative Structuredless Treatments</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Four Wheat Varieties (V1, V2, V3, V4)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Objectives</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Comparing mean Yield for different Wheat Varieties</li>
+<li>Comparing mean Yield for each pair of Wheat Varieties</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Statistical Methods</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Analysis of Variance (ANOVA)</li>
+<li>Multiple Mean Comparisons (LSD, DMR, Tukey’s HSD, etc)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="qualitative-structured-treatments" class="slide level2 smaller">
+<h2>Qualitative Structured Treatments</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Qualitative Structured Treatments</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Four Wheat Varieties: MaxiPak (1960), Inqalab (1991), Galaxy (2013) and Ujala (2015)</li>
+<li>Prior Information about grouping of treatments</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Objectives</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Comparing mean Yield for different Wheat Varieties</li>
+<li>Comparing old and new group of Wheat Varieties</li>
+<li>Comparing old Wheat Varieties</li>
+<li>Comparing new Wheat Varieties</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Statistical Methods</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Analysis of Variance (ANOVA)</li>
+<li>Contrast Analysis</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="factorial-treatments" class="slide level2 smaller">
+<h2>Factorial Treatments</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Factorial Treatments</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Treatments are the combinations of different levels of Nitrogen (Low and High) and Phosphorus (Low and High)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Objectives</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Comparing mean Yield for different treatment combinations</li>
+<li>Comparing mean Yield for different levels of Nitrogen</li>
+<li>Comparing mean Yield for different levels of Phosphorus</li>
+<li>Comparing mean Yield for Nitrogen <span class="math inline">\(\times\)</span> Phosphorus</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Statistical Methods</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Analysis of Variance (ANOVA)</li>
+<li>Contrast Analysis</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="treatment-design-2" class="slide level2">
+<h2>Treatment Design</h2>
+
+<img data-src="images/TreatmentStrAnalysis2.png" width="406" class="r-stretch quarto-figure-center"></section>
+<section id="contrast-analysis" class="slide level2">
+<h2>Contrast Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Contrast Analysis - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<div id="exm">
+<p>An experiment was conducted to test the effect of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil.</p>
+<p><strong>Treatments:</strong></p>
+<ol type="1">
+<li>No use of sulphur (Control)</li>
+<li>Application of sulphur in fall (Fall)</li>
+<li>Application of sulphur in spring (Spring)</li>
+</ol>
+<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
+<p><strong>Response:</strong> Scab Index</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contrast-analysis-1" class="slide level2">
+<h2>Contrast Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Contrast Analysis - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<caption><strong>Skeleton of ANOVA Table</strong></caption>
+<thead>
+<tr class="header">
+<th><strong>SOV</strong></th>
+<th style="text-align: right;"><strong>df</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td>Treatments</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td>Residual</td>
+<td style="text-align: right;">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="contrast-analysis-2" class="slide level2">
+<h2>Contrast Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Contrast Analysis - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<caption><strong>Skeleton of ANOVA Table</strong></caption>
+<thead>
+<tr class="header">
+<th><strong>SOV</strong></th>
+<th></th>
+<th style="text-align: right;"><strong>df</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td></td>
+<td style="text-align: right;">14</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Treatments</td>
+<td></td>
+<td style="text-align: right;">2</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Control vs Sulphur</td>
+<td style="text-align: right;"></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Fall vs Spring</td>
+<td style="text-align: right;"></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Residual</td>
+<td></td>
+<td style="text-align: right;">12</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="contrast-analysis-3" class="slide level2 smaller">
+<h2>Contrast Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Contrast Analysis - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<p>An experiment was conducted to test the effect of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil.</p>
+<p><strong>Treatments:</strong></p>
+<ol type="1">
+<li>No use of sulphur (Control)</li>
+<li>App. of 300 lb. per acre sulphur in fall (F3)</li>
+<li>App. of 600 lb. per acre sulphur in fall (F6)</li>
+<li>App. of 900 lb. per acre sulphur in fall (F9)</li>
+<li>App. of 300 lb. per acre sulphur in spring (S3)</li>
+<li>App. of 600 lb. per acre sulphur in spring (S6)</li>
+<li>App. of 900 lb. per acre sulphur in spring (S9)</li>
+</ol>
+<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
+<p><strong>Response:</strong> Scab Index</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contrast-analysis-4" class="slide level2">
+<h2>Contrast Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Contrast Analysis - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<caption><strong>Skeleton of ANOVA Table</strong></caption>
+<thead>
+<tr class="header">
+<th><strong>SOV</strong></th>
+<th style="text-align: right;"><strong>df</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="even">
+<td>Treatments</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td>Residual</td>
+<td style="text-align: right;">28</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="contrast-analysis-5" class="slide level2 smaller">
+<h2>Contrast Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Contrast Analysis - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<caption><strong>Skeleton of ANOVA Table</strong></caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 35%">
+<col style="width: 23%">
+<col style="width: 10%">
+<col style="width: 6%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>SOV</strong></th>
+<th></th>
+<th></th>
+<th style="text-align: right;"><strong>df</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td></td>
+<td></td>
+<td style="text-align: right;">34</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Treatments</td>
+<td></td>
+<td></td>
+<td style="text-align: right;">6</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Control vs Sulphur</td>
+<td></td>
+<td style="text-align: right;"></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Fall vs Spring</td>
+<td></td>
+<td style="text-align: right;"></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Among Fall Application</td>
+<td></td>
+<td style="text-align: right;"></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>FallLinear</td>
+<td style="text-align: right;"></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>FallQuadratic</td>
+<td style="text-align: right;"></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Among Spring Application</td>
+<td></td>
+<td style="text-align: right;"></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>SpringLinear</td>
+<td style="text-align: right;"></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>SpringQuadratic</td>
+<td style="text-align: right;"></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Residual</td>
+<td></td>
+<td></td>
+<td style="text-align: right;">28</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="factorial-treatment-structure" class="slide level2">
+<h2>Factorial Treatment Structure</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Factorial Treatment Structure - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<p>An experiment was conducted to test the effect of <span class="math inline">\(N\)</span> &amp; <span class="math inline">\(P\)</span> on wheat grain yield.</p>
+<p><strong>Treatments:</strong></p>
+<ol type="1">
+<li>Low <span class="math inline">\(N\)</span> &amp; Low <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{0}P_{0}\right)\)</span></li>
+<li>Low <span class="math inline">\(N\)</span> &amp; High <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{0}P_{1}\right)\)</span></li>
+<li>High <span class="math inline">\(N\)</span> &amp; Low <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{1}P_{0}\right)\)</span></li>
+<li>High <span class="math inline">\(N\)</span> &amp; High <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{1}P_{1}\right)\)</span></li>
+</ol>
+<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
+<p><strong>Response:</strong> Yield (Kg) per plot</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="factorial-treatment-structure-1" class="slide level2">
+<h2>Factorial Treatment Structure</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Factorial Treatment Structure - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<caption><strong>Skeleton of ANOVA Table</strong></caption>
+<thead>
+<tr class="header">
+<th><strong>SOV</strong></th>
+<th style="text-align: right;"><strong>df</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td>Treatments</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>Residual</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="factorial-treatment-structure-2" class="slide level2">
+<h2>Factorial Treatment Structure</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Factorial Treatment Structure - Prior Information</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<caption><strong>Skeleton of ANOVA Table</strong></caption>
+<thead>
+<tr class="header">
+<th><strong>SOV</strong></th>
+<th></th>
+<th style="text-align: right;"><strong>df</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td></td>
+<td style="text-align: right;">11</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Treatments</td>
+<td></td>
+<td style="text-align: right;">3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>N</td>
+<td style="text-align: right;"></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>P</td>
+<td style="text-align: right;"></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>NP</td>
+<td style="text-align: right;"></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Residual</td>
+<td></td>
+<td style="text-align: right;">8</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="error-control-design-1" class="slide level2">
+<h2>Error-Control Design</h2>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>First Law of Geography (Waldo Tobler)</strong></p>
+</div>
+<div class="callout-content">
+<p>Everything is related to everything else, but near things are more related than distant things.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="completely-randomized-design-crd" class="slide level2">
+<h2>Completely Randomized Design (CRD)</h2>
+<h3 id="homogeneous-experimental-material-2">Homogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-18-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="completely-randomized-design-crd-1" class="slide level2">
+<h2>Completely Randomized Design (CRD)</h2>
+<h3 id="homogeneous-experimental-material-3">Homogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-19-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="completely-randomized-design-crd-2" class="slide level2">
+<h2>Completely Randomized Design (CRD)</h2>
+<h3 id="homogeneous-experimental-material-4">Homogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="randomized-block-design-rbd" class="slide level2">
+<h2>Randomized Block Design (RBD)</h2>
+<h3 id="heterogeneous-experimental-material-4">Heterogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="randomized-block-design-rbd-1" class="slide level2">
+<h2>Randomized Block Design (RBD)</h2>
+<h3 id="heterogeneous-experimental-material-5">Heterogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-22-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="randomized-block-design-rbd-2" class="slide level2">
+<h2>Randomized Block Design (RBD)</h2>
+<h3 id="heterogeneous-experimental-material-6">Heterogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="randomized-block-design-rbd-3" class="slide level2">
+<h2>Randomized Block Design (RBD)</h2>
+<h3 id="heterogeneous-experimental-material-7">Heterogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="randomized-block-design-rbd-4" class="slide level2">
+<h2>Randomized Block Design (RBD)</h2>
+<h3 id="heterogeneous-experimental-material-8">Heterogeneous Experimental Material</h3>
+<ul>
+<li>Want to evaluate three treatments each replicated four times</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="randomized-block-design-rbd-5" class="slide level2">
+<h2>Randomized Block Design (RBD)</h2>
+<h3 id="soil-heterogeneity-analysis---uniformity-trials">Soil Heterogeneity Analysis - Uniformity Trials</h3>
+
+<img data-src="images/SoilHeterogeneityPlot1.png" width="1200" class="r-stretch quarto-figure-center"></section>
+<section id="randomized-block-design-rbd-6" class="slide level2">
+<h2>Randomized Block Design (RBD)</h2>
+<h3 id="soil-heterogeneity-analysis---uniformity-trials-1">Soil Heterogeneity Analysis - Uniformity Trials</h3>
+
+<img data-src="images/SoilHeterogeneityPlot2.png" width="1200" class="r-stretch quarto-figure-center"></section>
+<section id="randomized-block-design-rbd-7" class="slide level2">
+<h2>Randomized Block Design (RBD)</h2>
+<h3 id="soil-heterogeneity-analysis---uniformity-trials-2">Soil Heterogeneity Analysis - Uniformity Trials</h3>
+
+<img data-src="images/SoilHeterogeneityPlot3.png" width="1200" class="r-stretch quarto-figure-center"></section>
+<section id="split-plot-under-rcbd" class="slide level2">
+<h2>Split Plot under RCBD</h2>
+<ul>
+<li>One factor <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) requires large EUs &amp; other factor <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) can be applied to small EUs</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-29-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="split-plot-under-rcbd-1" class="slide level2">
+<h2>Split Plot under RCBD</h2>
+<ul>
+<li>One factor <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) requires large EUs &amp; other factor <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) can be applied to small EUs</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-30-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="split-plot-under-rcbd-2" class="slide level2">
+<h2>Split Plot under RCBD</h2>
+<ul>
+<li>One factor <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) requires large EUs &amp; other factor <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) can be applied to small EUs</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="split-plot-under-rcbd-3" class="slide level2">
+<h2>Split Plot under RCBD</h2>
+<ul>
+<li>One factor <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) requires large EUs &amp; other factor <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) can be applied to small EUs</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="split-plot-under-rcbd-4" class="slide level2">
+<h2>Split Plot under RCBD</h2>
+
+<img data-src="images/SplitPlotUnderRCBD.png" width="860" class="r-stretch quarto-figure-center"></section>
+<section id="strip-plot-under-rcbd" class="slide level2">
+<h2>Strip Plot under RCBD</h2>
+<ul>
+<li>Both factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) require large EUs</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-34-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="strip-plot-under-rcbd-1" class="slide level2">
+<h2>Strip Plot under RCBD</h2>
+<ul>
+<li>Both factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) require large EUs</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-35-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="strip-plot-under-rcbd-2" class="slide level2">
+<h2>Strip Plot under RCBD</h2>
+<ul>
+<li>Both factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) require large EUs</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-36-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="strip-plot-under-rcbd-3" class="slide level2">
+<h2>Strip Plot under RCBD</h2>
+<ul>
+<li>Both factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) require large EUs</li>
+</ul>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-37-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="strip-plot-under-rcbd-4" class="slide level2">
+<h2>Strip Plot under RCBD</h2>
+
+<img data-src="images/StripPlotDesign.png" width="904" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="basic-principles-of-experimental-design" class="title-slide slide level1 center">
+<h1>Basic Principles of Experimental Design</h1>
+
+</section>
+<section id="basic-principles-of-experimental-design-1" class="slide level2">
+<h2>Basic Principles of Experimental Design</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Randomization</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Random allocation of treatments to EUs</li>
+<li>It ensures validity of the estimate of experimental error</li>
+<li>It leads to an unbiased estimate of variance as well as an unbiased estimate of treatment differences</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="basic-principles-of-experimental-design-2" class="slide level2">
+<h2>Basic Principles of Experimental Design</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Replication</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Each treatment (or some of the treatments) must be applied to several experimental units</li>
+<li>Replications will enable us to estimate the experimental (random) error against which differences among treatments are judged</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="basic-principles-of-experimental-design-3" class="slide level2">
+<h2>Basic Principles of Experimental Design</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Local Control or Blocking</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>The basic idea is to partition the total set of experimental units into subsets (blocks) that are as homogeneous as possible</li>
+<li>The effects of nuisance factors which contribute systematic variation to the differences among experimental units can be eliminated</li>
+<li>This in turn will lead to a more sensitive analysis</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="selection-of-superior-stable-genotypes" class="title-slide slide level1 center">
+<h1>Selection of Superior &amp; Stable Genotypes</h1>
+
+</section>
+<section id="stability-analysis" class="slide level2">
+<h2>Stability Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Stability Analysis</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Environment</strong> - Year, Location or combination of Year &amp; Location</li>
+<li><strong>Multi-Environment Trials (METs)</strong> are conducted to evaluate plant genotypic performance &amp; stability over a wide range of environmental conditions</li>
+<li>Selection of the superior genotypes is fairly easy if their ranked performance remain the same over environments &amp; consequently genotypes perform independently of environments</li>
+<li>However, if the relative performance of genotypes varies across the environments then genotypes interact with environments</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="selection-of-superior-stable-genotypes-1" class="slide level2">
+<h2>Selection of Superior &amp; Stable Genotypes</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Stability Analysis</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>The presence of significant genotype-by-environment interaction causes problems in selecting superior genotypes</li>
+<li>Researchers have a long-standing interest in the development of objective techniques for selecting superior genotypes in crop performance trials</li>
+<li>Statistical analysis of the data obtained from METs has received considerable attention, largely in response to the difficulties generated by significant genotype-by-environment interactions</li>
+<li>Consequently, many methodologies have been proposed, developed and used for data analysis of the METs conducted by plant breeders</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="no-interaction-no-environment-effect" class="slide level2">
+<h2>No Interaction &amp; No Environment Effect</h2>
+
+<img data-src="images/InteractionNoNoEnvEffect.png" width="461" class="r-stretch quarto-figure-center"></section>
+<section id="no-interaction" class="slide level2">
+<h2>No Interaction</h2>
+
+<img data-src="images/InteractionNo.png" width="461" class="r-stretch quarto-figure-center"></section>
+<section id="non-crossover-interaction" class="slide level2">
+<h2>Non-Crossover Interaction</h2>
+
+<img data-src="images/InteractionNonCrossover.png" width="461" class="r-stretch quarto-figure-center"></section>
+<section id="crossover-interaction" class="slide level2">
+<h2>Crossover Interaction</h2>
+
+<img data-src="images/InteractionCrossover.png" width="461" class="r-stretch quarto-figure-center"></section>
+<section id="stability-analysis-3" class="slide level2">
+<h2>Stability Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Stability Analysis</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<p>A researcher has to evaluate ten wheat varieties in five different research stations for his research. He knows there is one directional soil fertility trend in each research station. Propose an efficient experimental design with its layout and proper randomization for this situation. Provide guidelines to analyze the data giving different sources of variation and their corresponding degrees of freedom in the ANOVA table and suggest any method(s) for inferences beyond ANOVA.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="stability-analysis-5" class="slide level2">
+<h2>Stability Analysis</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Combined ANOVA Table</strong></p>
+</div>
+<div class="callout-content">
+<table>
+<caption><strong>Combined ANOVA Table</strong></caption>
+<thead>
+<tr class="header">
+<th><strong>SOV</strong></th>
+<th style="text-align: right;"><strong>df</strong></th>
+<th style="text-align: right;"><strong>SS</strong></th>
+<th style="text-align: right;"><strong>MS</strong></th>
+<th style="text-align: right;"><strong>F</strong></th>
+<th style="text-align: right;"><strong>P(&gt;F)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Env</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2249.677</td>
+<td style="text-align: right;">562.419</td>
+<td style="text-align: right;">21.403</td>
+<td style="text-align: right;">&lt; 0.001</td>
+</tr>
+<tr class="even">
+<td>Rep (Env)</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">262.771</td>
+<td style="text-align: right;">26.277</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td>Gen</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">847.700</td>
+<td style="text-align: right;">94.189</td>
+<td style="text-align: right;">3.172</td>
+<td style="text-align: right;">0.002</td>
+</tr>
+<tr class="even">
+<td>Gen x Env</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">1888.211</td>
+<td style="text-align: right;">52.450</td>
+<td style="text-align: right;">1.766</td>
+<td style="text-align: right;">0.016</td>
+</tr>
+<tr class="odd">
+<td>Residual</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2672.389</td>
+<td style="text-align: right;">29.693</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="ammi-biplot" class="slide level2">
+<h2>AMMI Biplot</h2>
+
+<img data-src="images/AMMIBiplot1.png" width="448" class="r-stretch quarto-figure-center"></section>
+<section id="gge-biplot" class="slide level2">
+<h2>GGE Biplot</h2>
+
+<img data-src="images/GGEBiplot1.png" width="448" class="r-stretch quarto-figure-center"></section>
+<section id="cluster-analysis" class="slide level2">
+<h2>Cluster Analysis</h2>
+
+<img data-src="images/HeatMapGEEffects.png" width="671" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="path-analysis" class="title-slide slide level1 center">
+<h1>Path Analysis</h1>
+
+</section>
+<section id="path-analysis-1" class="slide level2">
+<h2>Path Analysis</h2>
+
+<img data-src="images/SEMPathDiagramYear2010.png" width="393" class="r-stretch quarto-figure-center"></section>
+<section id="path-analysis-2" class="slide level2">
+<h2>Path Analysis</h2>
+
+<img data-src="images/PathDiagramSEMLSRE.png" width="260" class="r-stretch quarto-figure-center"></section>
+<section id="path-analysis-3" class="slide level2">
+<h2>Path Analysis</h2>
+
+<img data-src="images/PathDiagramSEMLSRE2.png" width="416" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="references" class="title-slide slide level1 center">
+<h1>References</h1>
+
+</section>
+<section id="references-1" class="slide level2">
+<h2>References</h2>
+<p>Gomez, K. A. and A. A. Gomez (1984). <em>Statistical Procedures for Agricultural Research</em>. John Wiley &amp; Sons.</p>
+<p>Hinkelmann, K. (2012). <em>Design and Analysis of Experiments, Volume 3: Special Designs and Applications</em>. John Wiley &amp; Sons.</p>
+<p>Hinkelmann, K. and O. Kempthorne (2005). <em>Design and Analysis of Experiments, Volume 2: Advanced Experimental Design</em>. John Wiley &amp; Sons.</p>
+<p>Hinkelmann, K. and O. Kempthorne (2009). <em>Design and Analysis of Experiments, Volume 1: Introduction to Experimental Design</em>. John Wiley &amp; Sons.</p>
+</section>
+<section id="references-contd" class="slide level2">
+<h2>References (Cont’d…)</h2>
+<p>Kuehl, R. O. (1999). <em>Design of Experiments: Statistical Principles of Research Design and Analysis</em>. Duxbury Press.</p>
+<p>Mead, R. (1990). <em>The Design of Experiments: Statistical Principles for Practical Applications</em>. Cambridge University Press.</p>
+<p>Mead, R., R. N. Curnow, and A. M. Hasted (1993). <em>Statistical Methods in Agriculture and Experimental Biology</em>. Chapman &amp; Hall/CRC.</p>
+<p>Mead, R., S. Gilmour, and A. Mead (2012). <em>Statistical Principles for the Design of Experiments: Applications to Real Experiments</em>. Cambridge University Press.</p>
+</section>
+<section id="references-contd-1" class="slide level2">
+<h2>References (Cont’d…)</h2>
+<p>Milliken, G. and D. Johnson (1992). <em>Analysis of Messy Data. Volume I: Designed Experiments</em>. CRC Press.</p>
+<p>Petersen, R. G. (1994). <em>Agricultural Field Experiments: Design and Analysis</em>. CRC Press.</p>
+<p>Piepho, H. and R. Edmondson (2018). “A tutorial on the Statistical Analysis of Factorial Experiments with Qualitative and Quantitative treatment factor levels”. In: <em>Journal of Agronomy and Crop Science</em>. DOI: <a href="https://doi.org/10.1111%2Fjac.12267">10.1111/jac.12267</a>. URL: <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jac.12267">https://onlinelibrary.wiley.com/doi/full/10.1111/jac.12267</a>.</p>
+</section>
+<section id="references-contd-2" class="slide level2">
+<h2>References (Cont’d…)</h2>
+<p>R Core Team (2022). <em>R: A Language &amp; Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria. URL: <a href="http://www.R-project.org/">http://www.R-project.org/</a>.</p>
+<p>Stroup, W. W. (2012). <em>Generalized Linear Mixed Models: Modern Concepts, Methods &amp; Applications</em>. CRC Press.</p>
+<p>Yaseen, M., J. Crossa, S. Perez-Elizalde, et al.&nbsp;(2018). <em>bayesammi:Bayesian Estimation of the Additive Main Effects and Multiplicative Interaction Model</em>. R package version 0.1.0.</p>
+</section>
+<section id="references-contd-3" class="slide level2">
+<h2>References (Cont’d…)</h2>
+<p>Yaseen, M. and K. M. Eskridge (2018). <em>stability: Stability Analysis of Genotype by Environment Interaction (GEI)</em>. R package version 0.3.0.</p>
+<p>Yaseen, M., J. Griess, S. Mason, et al.&nbsp;(2014). “Potential use of GGE Bi-plot analysis to evaluate white Sorghum grain attributes for end uses”. In: <em>Pakistan Journal of Agricultural Sciences</em> 51.1, pp. 263-271.</p>
+<p>Yaseen, M., D. Jarquin, S. Perez-Elizalde, et al.&nbsp;(2018). <em>baystability: Bayesian Stability Analysis of Genotype by Environment Interaction (GEI)</em>. R package version 0.1.0.</p>
+<div class="footer footer-default">
+<p><span class="math inline">\(\color{green}{\textit{Muhammad Yaseen, PhD (Statistics, UNL-USA)}}\)</span>, <a href="https://myaseen208.com" class="uri">https://myaseen208.com</a></p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'smaller': false,
+
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        setTimeout(function() {
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          let href = ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+        tippyHover(ref, function() {
+          var popup = window.document.createElement('div');
+          cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    });
+    </script>
+    
+
+</body></html>
