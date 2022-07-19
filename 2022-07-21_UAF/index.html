@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.165">
   <meta name="author" content="\color{green}{\textit{Muhammad Yaseen}}">
-  <title>\color{green}{\textit{Design &amp; Analysis of}} \color{green}{\textit{Field Experiments}}</title>
+  <title>\color{green}{\textit{Statistics:}} \color{green}{\textit{The Art &amp; Science of}} \color{green}{\textit{Learning from Data}}</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title"><span class="math inline">\(\color{green}{\textit{Design &amp; Analysis of}}\)</span> <span class="math inline">\(\color{green}{\textit{Field Experiments}}\)</span></h1>
+  <h1 class="title"><span class="math inline">\(\color{green}{\textit{Statistics:}}\)</span> <span class="math inline">\(\color{green}{\textit{The Art &amp; Science of}}\)</span> <span class="math inline">\(\color{green}{\textit{Learning from Data}}\)</span></h1>
   <p class="author"><span class="math inline">\(\color{green}{\textit{Muhammad Yaseen}}\)</span></p>
   <p class="institute"></p>
   <p class="date"><span class="math inline">\(\color{green}{\textit{}}\)</span></p>
@@ -334,188 +334,27 @@
 <nav role="doc-toc"> 
 <h2 id="toc-title">Contents</h2>
 <ul>
-<li><a href="#/motivation">Motivation</a></li>
-<li><a href="#/introduction-2">Introduction</a></li>
-<li><a href="#/design-analysis">Design &amp; Analysis</a></li>
-<li><a href="#/basic-principles-of-experimental-design">Basic Principles of Experimental Design</a></li>
-<li><a href="#/selection-of-superior-stable-genotypes">Selection of Superior &amp; Stable Genotypes</a></li>
-<li><a href="#/path-analysis">Path Analysis</a></li>
-<li><a href="#/references">References</a></li>
+<li><a href="#/introduction">Introduction</a></li>
+<li><a href="#/variable">Variable</a></li>
+<li><a href="#/measurement-measurement-scales">Measurement &amp; Measurement Scales</a></li>
+<li><a href="#/types-of-variables">Types of Variables</a></li>
+<li><a href="#/relationship-bw-variables">Relationship b/w Variables</a></li>
+<li><a href="#/types-of-relationship">Types of Relationship</a></li>
+<li><a href="#/statistical-models">Statistical Models</a></li>
+<li><a href="#/regression-model">Regression Model</a></li>
+<li><a href="#/anova-model">ANOVA Model</a></li>
+<li><a href="#/ancova-model">ANCOVA Model</a></li>
+<li><a href="#/treatment-structure">Treatment Structure</a></li>
 </ul>
 </nav>
 </section>
 
 <section>
-<section id="motivation" class="title-slide slide level1 center">
-<h1>Motivation</h1>
-
-</section>
-<section id="introduction" class="slide level2">
-<h2>Introduction</h2>
-
-<img data-src="images/BiplotAMMI.png" width="1168" class="r-stretch quarto-figure-center"></section>
-<section id="introduction-1" class="slide level2">
-<h2>Introduction</h2>
-
-<img data-src="images/BiplotGGE.png" width="1168" class="r-stretch quarto-figure-center"></section>
-<section id="design" class="slide level2">
-<h2>Design</h2>
-<h3 id="homogeneous-experimental-material">Homogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="design-1" class="slide level2">
-<h2>Design</h2>
-<h3 id="homogeneous-experimental-material-1">Homogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate two factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) &amp; each treatment combination replicated three times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="design-2" class="slide level2">
-<h2>Design</h2>
-<h3 id="heterogeneous-experimental-material">Heterogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="design-3" class="slide level2">
-<h2>Design</h2>
-<h3 id="heterogeneous-experimental-material-1">Heterogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate two factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) &amp; each treatment combination replicated three times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="design-4" class="slide level2">
-<h2>Design</h2>
-<h3 id="heterogeneous-experimental-material-2">Heterogeneous Experimental Material</h3>
-<ul>
-<li><p>Want to evaluate two factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) &amp; each treatment combination replicated three times</p></li>
-<li><p>Factor <span class="math inline">\(A\)</span> requires large EUs &amp; factor <span class="math inline">\(B\)</span> can be applied to small EUs</p></li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="design-5" class="slide level2">
-<h2>Design</h2>
-<h3 id="heterogeneous-experimental-material-3">Heterogeneous Experimental Material</h3>
-<ul>
-<li><p>Want to evaluate two factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) &amp; each treatment combination replicated three times</p></li>
-<li><p>Both factors <span class="math inline">\(A\)</span> &amp; <span class="math inline">\(B\)</span> require large EUs</p></li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="analysis" class="slide level2">
-<h2>Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Analysis</strong></p>
-</div>
-<div class="callout-content">
-<div id="exm-exmp1" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1 </strong></span></p>
-<p>A researcher has to evaluate ten wheat varieties in five different research stations for his research. He knows there is one directional soil fertility trend in each research station. Propose an efficient experimental design with its layout and proper randomization for this situation. Provide guidelines to analyze the data giving different sources of variation and their corresponding degrees of freedom in the ANOVA table and suggest any method(s) for inferences beyond ANOVA.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="analysis-2" class="slide level2">
-<h2>Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Analysis</strong></p>
-</div>
-<div class="callout-content">
-<div id="exm-exmp2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 </strong></span>An experiment was conducted to test the effect of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil.</p>
-<p><strong>Treatments:</strong></p>
-<ol type="1">
-<li>No use of sulphur (Control)</li>
-<li>Application of sulphur in fall (Fall)</li>
-<li>Application of sulphur in spring (Spring)</li>
-</ol>
-<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
-<p><strong>Response:</strong> Scab Index</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="analysis-4" class="slide level2 smaller">
-<h2>Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Analysis</strong></p>
-</div>
-<div class="callout-content">
-<div id="exm-exmp3" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 </strong></span>An experiment was conducted to test the effect of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil.</p>
-<p><strong>Treatments:</strong></p>
-<ol type="1">
-<li>No use of sulphur (Control)</li>
-<li>App. of 300 lb. per acre sulphur in fall (F3)</li>
-<li>App. of 600 lb. per acre sulphur in fall (F6)</li>
-<li>App. of 900 lb. per acre sulphur in fall (F9)</li>
-<li>App. of 300 lb. per acre sulphur in spring (S3)</li>
-<li>App. of 600 lb. per acre sulphur in spring (S6)</li>
-<li>App. of 900 lb. per acre sulphur in spring (S9)</li>
-</ol>
-<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
-<p><strong>Response:</strong> Scab Index</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="analysis-6" class="slide level2">
-<h2>Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Analysis</strong></p>
-</div>
-<div class="callout-content">
-<div id="exm-exmp4" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 </strong></span>An experiment was conducted to test the effect of <span class="math inline">\(N\)</span> &amp; <span class="math inline">\(P\)</span> on wheat grain yield.</p>
-<p><strong>Treatments:</strong></p>
-<ol type="1">
-<li>Low <span class="math inline">\(N\)</span> &amp; Low <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{0}P_{0}\right)\)</span></li>
-<li>Low <span class="math inline">\(N\)</span> &amp; High <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{0}P_{1}\right)\)</span></li>
-<li>High <span class="math inline">\(N\)</span> &amp; Low <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{1}P_{0}\right)\)</span></li>
-<li>High <span class="math inline">\(N\)</span> &amp; High <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{1}P_{1}\right)\)</span></li>
-</ol>
-<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
-<p><strong>Response:</strong> Yield (Kg) per plot</p>
-</div>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="introduction-2" class="title-slide slide level1 center">
+<section id="introduction" class="title-slide slide level1 center">
 <h1>Introduction</h1>
 
 </section>
-<section id="introduction-3" class="slide level2">
+<section id="introduction-1" class="slide level2">
 <h2>Introduction</h2>
 <p>&nbsp; &nbsp;</p>
 <div class="columns">
@@ -536,7 +375,7 @@
 </div>
 </div>
 </section>
-<section id="introduction-4" class="slide level2">
+<section id="introduction-2" class="slide level2">
 <h2>Introduction</h2>
 <ul>
 <li><blockquote>
@@ -554,7 +393,7 @@
 </ul>
 </div>
 </section>
-<section id="introduction-5" class="slide level2">
+<section id="introduction-3" class="slide level2">
 <h2>Introduction</h2>
 <ul>
 <li><blockquote>
@@ -571,26 +410,26 @@
 </ul>
 </div>
 </section>
+<section id="introduction-4" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<section id="introduction-5" class="slide level2">
+<h2>Introduction</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
 <section id="introduction-6" class="slide level2">
 <h2>Introduction</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
 <section id="introduction-7" class="slide level2">
 <h2>Introduction</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
 <section id="introduction-8" class="slide level2">
 <h2>Introduction</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="introduction-9" class="slide level2">
-<h2>Introduction</h2>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="introduction-10" class="slide level2">
-<h2>Introduction</h2>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
 <section id="decision-review-system" class="slide level2">
 <h2>Decision Review System</h2>
 <iframe width="1000" height="550" src="https://www.youtube.com/embed/ZPNUfUk3VNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
@@ -626,1265 +465,492 @@
 <iframe width="1000" height="550" src="https://www.youtube.com/embed/Ryi0oZV-fd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 </section>
-<section id="design-of-field-experiments" class="slide level2">
-<h2>Design of Field Experiments</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Design</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>The actual arrangement of the treatments in an experimental plan using a rule of assigning the treatments to EUs</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="analysis-of-field-experiments" class="slide level2 smaller">
-<h2>Analysis of Field Experiments</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Statistical Analysis</strong></p>
-</div>
-<div class="callout-content">
+<section id="introduction-9" class="slide level2">
+<h2>Introduction</h2>
 <div>
 <ul>
-<li class="fragment">Statistical Analysis of the data obtained from field experiments
+<li class="fragment"><p><span class="math inline">\(\color{red}{\text{Mathematics}}\)</span> is the <span class="math inline">\(\color{red}{\text{language}}\)</span> of <span class="math inline">\(\color{red}{\text{Science}}\)</span></p>
 <ul>
-<li class="fragment">Linear Models
-<ul>
-<li class="fragment">Regression Analysis</li>
-<li class="fragment">Analysis of Variance (ANOVA)</li>
-<li class="fragment">Analysis of Covariance (ANCOVA)</li>
+<li class="fragment"><span class="math inline">\(2 + 2 = 4\)</span></li>
+<li class="fragment"><span class="math inline">\(0^{\circ}C = 32^{\circ}F\)</span> (<span class="math inline">\(\color{blue}{\text{Paradox}}\)</span>)</li>
+<li class="fragment">Every action has reaction of same extent but opposite direction. (<span class="math inline">\(\color{blue}{\text{Newton's Third Law}}\)</span>)</li>
 </ul></li>
-<li class="fragment">Generalized Linear Models (GLM)</li>
-<li class="fragment">Linear Mixed Models (LMM)</li>
-<li class="fragment">Generalized Linear Mixed Models (GLMM)</li>
-<li class="fragment">Genotype <span class="math inline">\(\times\)</span> Environment Interaction Analysis
+<li class="fragment"><p><span class="math inline">\(\color{green}{\text{Statistics}}\)</span> is the science of <span class="math inline">\(\color{green}{\text{uncertainty}}\)</span> and <span class="math inline">\(\color{green}{\text{variability}}\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\color{green}{\text{Statistics}}\)</span> is the <span class="math inline">\(\color{green}{\text{interpretation}}\)</span> of <span class="math inline">\(\color{green}{\text{Science}}\)</span></p>
 <ul>
-<li class="fragment">Linear, Bilinear, and Mixed Models</li>
-<li class="fragment">AMMI, GGE, Factorial Regression</li>
-</ul></li>
-<li class="fragment">Path Analysis</li>
-<li class="fragment">Bayesian Analysis, etc</li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{D}}\)</span>ata <span class="math inline">\(\color{green}{\text{D}}\)</span>riven <span class="math inline">\(\color{green}{\text{D}}\)</span>ecisions (<span class="math inline">\(\color{green}{\text{3Ds}}\)</span>)</li>
 </ul></li>
 </ul>
 </div>
+</section>
+<section id="reasoning" class="slide level2">
+<h2>Reasoning</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Deduction:}}\)</span>
+<ul>
+<li class="fragment"><p>Reasoning from <span class="math inline">\(\color{green}{\text{general}}\)</span> to <span class="math inline">\(\color{green}{\text{particular}}\)</span>.</p></li>
+<li class="fragment"><p>Man is mortal. → Every human being is mortal.</p></li>
+</ul></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{red}{\text{Induction:}}\)</span>
+<ul>
+<li class="fragment">Reasoning from <span class="math inline">\(\color{red}{\text{particular}}\)</span> to <span class="math inline">\(\color{red}{\text{general}}\)</span>.</li>
+</ul></li>
+</ul>
 </div>
-</div>
+</section>
+<section id="statistical-reasoning-analysis" class="slide level2">
+<h2>Statistical Reasoning &amp; Analysis</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Statistics}}\)</span> is the <span class="math inline">\(\color{green}{\text{science}}\)</span> of <span class="math inline">\(\color{green}{\text{uncertainty}}\)</span> &amp; <span class="math inline">\(\color{green}{\text{variability}}\)</span></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li class="fragment"><p>Turning <span class="math inline">\(\color{green}{\text{Data}}\)</span> into <span class="math inline">\(\color{green}{\text{Information}}\)</span></p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Data}}\)</span> → <span class="math inline">\(\color{green}{\text{Information}}\)</span> → <span class="math inline">\(\color{green}{\text{Knowledge}}\)</span> → <span class="math inline">\(\color{green}{\text{Wisdom}}\)</span></li>
+</ul></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Statistics}}\)</span> is the <span class="math inline">\(\color{green}{\text{Art}}\)</span> and <span class="math inline">\(\color{green}{\text{Science}}\)</span> of <span class="math inline">\(\color{green}{\text{learning}}\)</span> from <span class="math inline">\(\color{green}{\text{Data}}\)</span>.</li>
+</ul>
 </div>
 </section></section>
 <section>
-<section id="design-analysis" class="title-slide slide level1 center">
-<h1>Design &amp; Analysis</h1>
+<section id="variable" class="title-slide slide level1 center">
+<h1>Variable</h1>
 
 </section>
-<section id="scientific-experimentation" class="slide level2">
-<h2>Scientific Experimentation</h2>
-
-<img data-src="images/LogicalStepsScientificExperimentation.png" width="562" class="r-stretch quarto-figure-center"></section>
-<section id="three-aspects-of-design" class="slide level2 smaller">
-<h2>Three Aspects of Design</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Treatment Design</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>The treatment design determines the treatments to be included in the study: which treatments should we choose &amp; how many?</li>
-<li>The treatments may be determined by various treatment factors and level combinations of such factors.</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Error-Control Design</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Nature of Experimental Design to control and minimize Experimental Error</li>
-<li>The actual arrangement of the treatments in an experimental plan using a rule of assigning the treatments to EUs</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Sampling &amp; Observation Design</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Determines at which level observations are being taken and what kinds of observations are being taken</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="treatment-design-1" class="slide level2">
-<h2>Treatment Design</h2>
-
-<img data-src="images/TreatmentStr2.png" width="364" class="r-stretch quarto-figure-center"></section>
-<section id="quantitative-treatments" class="slide level2">
-<h2>Quantitative Treatments</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Quantitative Treatments</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Four different amounts of nitrogen (N) fertilizer (0, 50, 100, 150 kg/ha)</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Objectives</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Quantify the dependency of Yield on amounts of nitrogen</li>
-<li>Find the optimum amount of nitrogen for maximum Yield</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Statistical Methods</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Regression Analysis (Trend/Curve Analysis, or Response Surface Methodology)</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="qualitative-treatments" class="slide level2">
-<h2>Qualitative Treatments</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Qualitative Treatments</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Four Wheat Varieties (V1, V2, V3, V4)</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Objectives</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Comparing mean Yield for different Wheat Varieties</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Statistical Methods</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Analysis of Variance (ANOVA)</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="qualitative-structuredless-treatments" class="slide level2 smaller">
-<h2>Qualitative Structuredless Treatments</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Qualitative Structuredless Treatments</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Four Wheat Varieties (V1, V2, V3, V4)</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Objectives</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Comparing mean Yield for different Wheat Varieties</li>
-<li>Comparing mean Yield for each pair of Wheat Varieties</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Statistical Methods</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Analysis of Variance (ANOVA)</li>
-<li>Multiple Mean Comparisons (LSD, DMR, Tukey’s HSD, etc)</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="qualitative-structured-treatments" class="slide level2 smaller">
-<h2>Qualitative Structured Treatments</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Qualitative Structured Treatments</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Four Wheat Varieties: MaxiPak (1960), Inqalab (1991), Galaxy (2013) and Ujala (2015)</li>
-<li>Prior Information about grouping of treatments</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Objectives</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Comparing mean Yield for different Wheat Varieties</li>
-<li>Comparing old and new group of Wheat Varieties</li>
-<li>Comparing old Wheat Varieties</li>
-<li>Comparing new Wheat Varieties</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Statistical Methods</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Analysis of Variance (ANOVA)</li>
-<li>Contrast Analysis</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="factorial-treatments" class="slide level2 smaller">
-<h2>Factorial Treatments</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Factorial Treatments</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Treatments are the combinations of different levels of Nitrogen (Low and High) and Phosphorus (Low and High)</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Objectives</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Comparing mean Yield for different treatment combinations</li>
-<li>Comparing mean Yield for different levels of Nitrogen</li>
-<li>Comparing mean Yield for different levels of Phosphorus</li>
-<li>Comparing mean Yield for Nitrogen <span class="math inline">\(\times\)</span> Phosphorus</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Statistical Methods</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Analysis of Variance (ANOVA)</li>
-<li>Contrast Analysis</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="treatment-design-2" class="slide level2">
-<h2>Treatment Design</h2>
-
-<img data-src="images/TreatmentStrAnalysis2.png" width="406" class="r-stretch quarto-figure-center"></section>
-<section id="contrast-analysis" class="slide level2">
-<h2>Contrast Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Contrast Analysis - Prior Information</strong></p>
-</div>
-<div class="callout-content">
-<div id="exm">
-<p>An experiment was conducted to test the effect of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil.</p>
-<p><strong>Treatments:</strong></p>
-<ol type="1">
-<li>No use of sulphur (Control)</li>
-<li>Application of sulphur in fall (Fall)</li>
-<li>Application of sulphur in spring (Spring)</li>
-</ol>
-<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
-<p><strong>Response:</strong> Scab Index</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="contrast-analysis-1" class="slide level2">
-<h2>Contrast Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Contrast Analysis - Prior Information</strong></p>
-</div>
-<div class="callout-content">
-<table>
-<caption><strong>Skeleton of ANOVA Table</strong></caption>
-<thead>
-<tr class="header">
-<th><strong>SOV</strong></th>
-<th style="text-align: right;"><strong>df</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Total</td>
-<td style="text-align: right;">14</td>
-</tr>
-<tr class="even">
-<td>Treatments</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td>Residual</td>
-<td style="text-align: right;">12</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="contrast-analysis-2" class="slide level2">
-<h2>Contrast Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Contrast Analysis - Prior Information</strong></p>
-</div>
-<div class="callout-content">
-<table>
-<caption><strong>Skeleton of ANOVA Table</strong></caption>
-<thead>
-<tr class="header">
-<th><strong>SOV</strong></th>
-<th></th>
-<th style="text-align: right;"><strong>df</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Total</td>
-<td></td>
-<td style="text-align: right;">14</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Treatments</td>
-<td></td>
-<td style="text-align: right;">2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Control vs Sulphur</td>
-<td style="text-align: right;"></td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Fall vs Spring</td>
-<td style="text-align: right;"></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Residual</td>
-<td></td>
-<td style="text-align: right;">12</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="contrast-analysis-3" class="slide level2 smaller">
-<h2>Contrast Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Contrast Analysis - Prior Information</strong></p>
-</div>
-<div class="callout-content">
+<section id="variable-1" class="slide level2">
+<h2>Variable</h2>
 <div>
-<p>An experiment was conducted to test the effect of applications of sulphur in reducing scab disease of potatoes. The object in applying sulphur is to increase the acidity of the soil, since scab does not thrive in very acid soil.</p>
-<p><strong>Treatments:</strong></p>
-<ol type="1">
-<li>No use of sulphur (Control)</li>
-<li>App. of 300 lb. per acre sulphur in fall (F3)</li>
-<li>App. of 600 lb. per acre sulphur in fall (F6)</li>
-<li>App. of 900 lb. per acre sulphur in fall (F9)</li>
-<li>App. of 300 lb. per acre sulphur in spring (S3)</li>
-<li>App. of 600 lb. per acre sulphur in spring (S6)</li>
-<li>App. of 900 lb. per acre sulphur in spring (S9)</li>
-</ol>
-<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
-<p><strong>Response:</strong> Scab Index</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="contrast-analysis-4" class="slide level2">
-<h2>Contrast Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Contrast Analysis - Prior Information</strong></p>
-</div>
-<div class="callout-content">
-<table>
-<caption><strong>Skeleton of ANOVA Table</strong></caption>
-<thead>
-<tr class="header">
-<th><strong>SOV</strong></th>
-<th style="text-align: right;"><strong>df</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Total</td>
-<td style="text-align: right;">34</td>
-</tr>
-<tr class="even">
-<td>Treatments</td>
-<td style="text-align: right;">6</td>
-</tr>
-<tr class="odd">
-<td>Residual</td>
-<td style="text-align: right;">28</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="contrast-analysis-5" class="slide level2 smaller">
-<h2>Contrast Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Contrast Analysis - Prior Information</strong></p>
-</div>
-<div class="callout-content">
-<table>
-<caption><strong>Skeleton of ANOVA Table</strong></caption>
-<colgroup>
-<col style="width: 16%">
-<col style="width: 35%">
-<col style="width: 23%">
-<col style="width: 10%">
-<col style="width: 6%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>SOV</strong></th>
-<th></th>
-<th></th>
-<th style="text-align: right;"><strong>df</strong></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Total</td>
-<td></td>
-<td></td>
-<td style="text-align: right;">34</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Treatments</td>
-<td></td>
-<td></td>
-<td style="text-align: right;">6</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Control vs Sulphur</td>
-<td></td>
-<td style="text-align: right;"></td>
-<td>1</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Fall vs Spring</td>
-<td></td>
-<td style="text-align: right;"></td>
-<td>1</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Among Fall Application</td>
-<td></td>
-<td style="text-align: right;"></td>
-<td>2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td>FallLinear</td>
-<td style="text-align: right;"></td>
-<td></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td>FallQuadratic</td>
-<td style="text-align: right;"></td>
-<td></td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Among Spring Application</td>
-<td></td>
-<td style="text-align: right;"></td>
-<td>2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td>SpringLinear</td>
-<td style="text-align: right;"></td>
-<td></td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td>SpringQuadratic</td>
-<td style="text-align: right;"></td>
-<td></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Residual</td>
-<td></td>
-<td></td>
-<td style="text-align: right;">28</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="factorial-treatment-structure" class="slide level2">
-<h2>Factorial Treatment Structure</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Factorial Treatment Structure - Prior Information</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<p>An experiment was conducted to test the effect of <span class="math inline">\(N\)</span> &amp; <span class="math inline">\(P\)</span> on wheat grain yield.</p>
-<p><strong>Treatments:</strong></p>
-<ol type="1">
-<li>Low <span class="math inline">\(N\)</span> &amp; Low <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{0}P_{0}\right)\)</span></li>
-<li>Low <span class="math inline">\(N\)</span> &amp; High <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{0}P_{1}\right)\)</span></li>
-<li>High <span class="math inline">\(N\)</span> &amp; Low <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{1}P_{0}\right)\)</span></li>
-<li>High <span class="math inline">\(N\)</span> &amp; High <span class="math inline">\(P\)</span> <span class="math inline">\(\left(N_{1}P_{1}\right)\)</span></li>
-</ol>
-<p><strong>Replicates:</strong> Each treatment was replicated five times</p>
-<p><strong>Response:</strong> Yield (Kg) per plot</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="factorial-treatment-structure-1" class="slide level2">
-<h2>Factorial Treatment Structure</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Factorial Treatment Structure - Prior Information</strong></p>
-</div>
-<div class="callout-content">
-<table>
-<caption><strong>Skeleton of ANOVA Table</strong></caption>
-<thead>
-<tr class="header">
-<th><strong>SOV</strong></th>
-<th style="text-align: right;"><strong>df</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Total</td>
-<td style="text-align: right;">11</td>
-</tr>
-<tr class="even">
-<td>Treatments</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td>Residual</td>
-<td style="text-align: right;">8</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="factorial-treatment-structure-2" class="slide level2">
-<h2>Factorial Treatment Structure</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Factorial Treatment Structure - Prior Information</strong></p>
-</div>
-<div class="callout-content">
-<table>
-<caption><strong>Skeleton of ANOVA Table</strong></caption>
-<thead>
-<tr class="header">
-<th><strong>SOV</strong></th>
-<th></th>
-<th style="text-align: right;"><strong>df</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Total</td>
-<td></td>
-<td style="text-align: right;">11</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Treatments</td>
-<td></td>
-<td style="text-align: right;">3</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>N</td>
-<td style="text-align: right;"></td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>P</td>
-<td style="text-align: right;"></td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>NP</td>
-<td style="text-align: right;"></td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Residual</td>
-<td></td>
-<td style="text-align: right;">8</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="error-control-design-1" class="slide level2">
-<h2>Error-Control Design</h2>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>First Law of Geography (Waldo Tobler)</strong></p>
-</div>
-<div class="callout-content">
-<p>Everything is related to everything else, but near things are more related than distant things.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="completely-randomized-design-crd" class="slide level2">
-<h2>Completely Randomized Design (CRD)</h2>
-<h3 id="homogeneous-experimental-material-2">Homogeneous Experimental Material</h3>
 <ul>
-<li>Want to evaluate three treatments each replicated four times</li>
+<li class="fragment"><p><span class="math inline">\(\color{red}{\text{Variable:}}\)</span> A <span class="math inline">\(\color{green}{\text{characteristic}}\)</span> that may <span class="math inline">\(\color{green}{\text{vary}}\)</span> from <span class="math inline">\(\color{green}{\text{subject}}\)</span> to <span class="math inline">\(\color{green}{\text{subject}}\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\color{red}{\text{Variables}}\)</span> are <span class="math inline">\(\color{green}{\text{denoted}}\)</span> by <span class="math inline">\(\color{green}{\text{last}}\)</span> <span class="math inline">\(\color{green}{\text{English}}\)</span> <span class="math inline">\(\color{green}{\text{alphabets}}\)</span> in <span class="math inline">\(\color{green}{\text{upper}}\)</span> <span class="math inline">\(\color{green}{\text{case}}\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\color{green}{\text{Different observations}}\)</span> of a <span class="math inline">\(\color{red}{\text{variable}}\)</span> are <span class="math inline">\(\color{green}{\text{characterized}}\)</span> by <span class="math inline">\(\color{green}{\text{subscripts}}\)</span></p></li>
 </ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-18-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="completely-randomized-design-crd-1" class="slide level2">
-<h2>Completely Randomized Design (CRD)</h2>
-<h3 id="homogeneous-experimental-material-3">Homogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-19-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="completely-randomized-design-crd-2" class="slide level2">
-<h2>Completely Randomized Design (CRD)</h2>
-<h3 id="homogeneous-experimental-material-4">Homogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="randomized-block-design-rbd" class="slide level2">
-<h2>Randomized Block Design (RBD)</h2>
-<h3 id="heterogeneous-experimental-material-4">Heterogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="randomized-block-design-rbd-1" class="slide level2">
-<h2>Randomized Block Design (RBD)</h2>
-<h3 id="heterogeneous-experimental-material-5">Heterogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-22-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="randomized-block-design-rbd-2" class="slide level2">
-<h2>Randomized Block Design (RBD)</h2>
-<h3 id="heterogeneous-experimental-material-6">Heterogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="randomized-block-design-rbd-3" class="slide level2">
-<h2>Randomized Block Design (RBD)</h2>
-<h3 id="heterogeneous-experimental-material-7">Heterogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="randomized-block-design-rbd-4" class="slide level2">
-<h2>Randomized Block Design (RBD)</h2>
-<h3 id="heterogeneous-experimental-material-8">Heterogeneous Experimental Material</h3>
-<ul>
-<li>Want to evaluate three treatments each replicated four times</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="randomized-block-design-rbd-5" class="slide level2">
-<h2>Randomized Block Design (RBD)</h2>
-<h3 id="soil-heterogeneity-analysis---uniformity-trials">Soil Heterogeneity Analysis - Uniformity Trials</h3>
-
-<img data-src="images/SoilHeterogeneityPlot1.png" width="1200" class="r-stretch quarto-figure-center"></section>
-<section id="randomized-block-design-rbd-6" class="slide level2">
-<h2>Randomized Block Design (RBD)</h2>
-<h3 id="soil-heterogeneity-analysis---uniformity-trials-1">Soil Heterogeneity Analysis - Uniformity Trials</h3>
-
-<img data-src="images/SoilHeterogeneityPlot2.png" width="1200" class="r-stretch quarto-figure-center"></section>
-<section id="randomized-block-design-rbd-7" class="slide level2">
-<h2>Randomized Block Design (RBD)</h2>
-<h3 id="soil-heterogeneity-analysis---uniformity-trials-2">Soil Heterogeneity Analysis - Uniformity Trials</h3>
-
-<img data-src="images/SoilHeterogeneityPlot3.png" width="1200" class="r-stretch quarto-figure-center"></section>
-<section id="split-plot-under-rcbd" class="slide level2">
-<h2>Split Plot under RCBD</h2>
-<ul>
-<li>One factor <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) requires large EUs &amp; other factor <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) can be applied to small EUs</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-29-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="split-plot-under-rcbd-1" class="slide level2">
-<h2>Split Plot under RCBD</h2>
-<ul>
-<li>One factor <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) requires large EUs &amp; other factor <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) can be applied to small EUs</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-30-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="split-plot-under-rcbd-2" class="slide level2">
-<h2>Split Plot under RCBD</h2>
-<ul>
-<li>One factor <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) requires large EUs &amp; other factor <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) can be applied to small EUs</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="split-plot-under-rcbd-3" class="slide level2">
-<h2>Split Plot under RCBD</h2>
-<ul>
-<li>One factor <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) requires large EUs &amp; other factor <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) can be applied to small EUs</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="split-plot-under-rcbd-4" class="slide level2">
-<h2>Split Plot under RCBD</h2>
-
-<img data-src="images/SplitPlotUnderRCBD.png" width="860" class="r-stretch quarto-figure-center"></section>
-<section id="strip-plot-under-rcbd" class="slide level2">
-<h2>Strip Plot under RCBD</h2>
-<ul>
-<li>Both factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) require large EUs</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-34-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="strip-plot-under-rcbd-1" class="slide level2">
-<h2>Strip Plot under RCBD</h2>
-<ul>
-<li>Both factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) require large EUs</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-35-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="strip-plot-under-rcbd-2" class="slide level2">
-<h2>Strip Plot under RCBD</h2>
-<ul>
-<li>Both factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) require large EUs</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-36-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="strip-plot-under-rcbd-3" class="slide level2">
-<h2>Strip Plot under RCBD</h2>
-<ul>
-<li>Both factors <span class="math inline">\(A\)</span> (<span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(A_4\)</span>) &amp; <span class="math inline">\(B\)</span> (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2\)</span>, <span class="math inline">\(B_3\)</span>) require large EUs</li>
-</ul>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-37-1.png" width="2400" class="r-stretch quarto-figure-center"></section>
-<section id="strip-plot-under-rcbd-4" class="slide level2">
-<h2>Strip Plot under RCBD</h2>
-
-<img data-src="images/StripPlotDesign.png" width="904" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="basic-principles-of-experimental-design" class="title-slide slide level1 center">
-<h1>Basic Principles of Experimental Design</h1>
-
-</section>
-<section id="basic-principles-of-experimental-design-1" class="slide level2">
-<h2>Basic Principles of Experimental Design</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Randomization</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Random allocation of treatments to EUs</li>
-<li>It ensures validity of the estimate of experimental error</li>
-<li>It leads to an unbiased estimate of variance as well as an unbiased estimate of treatment differences</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="basic-principles-of-experimental-design-2" class="slide level2">
-<h2>Basic Principles of Experimental Design</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Replication</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Each treatment (or some of the treatments) must be applied to several experimental units</li>
-<li>Replications will enable us to estimate the experimental (random) error against which differences among treatments are judged</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="basic-principles-of-experimental-design-3" class="slide level2">
-<h2>Basic Principles of Experimental Design</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Local Control or Blocking</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>The basic idea is to partition the total set of experimental units into subsets (blocks) that are as homogeneous as possible</li>
-<li>The effects of nuisance factors which contribute systematic variation to the differences among experimental units can be eliminated</li>
-<li>This in turn will lead to a more sensitive analysis</li>
-</ul>
-</div>
-</div>
 </div>
 </section></section>
 <section>
-<section id="selection-of-superior-stable-genotypes" class="title-slide slide level1 center">
-<h1>Selection of Superior &amp; Stable Genotypes</h1>
+<section id="measurement-measurement-scales" class="title-slide slide level1 center">
+<h1>Measurement &amp; Measurement Scales</h1>
 
 </section>
-<section id="stability-analysis" class="slide level2">
-<h2>Stability Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Stability Analysis</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><strong>Environment</strong> - Year, Location or combination of Year &amp; Location</li>
-<li><strong>Multi-Environment Trials (METs)</strong> are conducted to evaluate plant genotypic performance &amp; stability over a wide range of environmental conditions</li>
-<li>Selection of the superior genotypes is fairly easy if their ranked performance remain the same over environments &amp; consequently genotypes perform independently of environments</li>
-<li>However, if the relative performance of genotypes varies across the environments then genotypes interact with environments</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="selection-of-superior-stable-genotypes-1" class="slide level2">
-<h2>Selection of Superior &amp; Stable Genotypes</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Stability Analysis</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>The presence of significant genotype-by-environment interaction causes problems in selecting superior genotypes</li>
-<li>Researchers have a long-standing interest in the development of objective techniques for selecting superior genotypes in crop performance trials</li>
-<li>Statistical analysis of the data obtained from METs has received considerable attention, largely in response to the difficulties generated by significant genotype-by-environment interactions</li>
-<li>Consequently, many methodologies have been proposed, developed and used for data analysis of the METs conducted by plant breeders</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="no-interaction-no-environment-effect" class="slide level2">
-<h2>No Interaction &amp; No Environment Effect</h2>
+<section id="measurement-measurement-scales-1" class="slide level2">
+<h2>Measurement &amp; Measurement Scales</h2>
 
-<img data-src="images/InteractionNoNoEnvEffect.png" width="461" class="r-stretch quarto-figure-center"></section>
-<section id="no-interaction" class="slide level2">
-<h2>No Interaction</h2>
-
-<img data-src="images/InteractionNo.png" width="461" class="r-stretch quarto-figure-center"></section>
-<section id="non-crossover-interaction" class="slide level2">
-<h2>Non-Crossover Interaction</h2>
-
-<img data-src="images/InteractionNonCrossover.png" width="461" class="r-stretch quarto-figure-center"></section>
-<section id="crossover-interaction" class="slide level2">
-<h2>Crossover Interaction</h2>
-
-<img data-src="images/InteractionCrossover.png" width="461" class="r-stretch quarto-figure-center"></section>
-<section id="stability-analysis-3" class="slide level2">
-<h2>Stability Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Stability Analysis</strong></p>
-</div>
-<div class="callout-content">
+<img data-src="images/TrafficSignals.jpg" width="97" class="r-stretch quarto-figure-center"><p class="caption">Traffic Signal</p></section>
+<section id="measurement-measurement-scales-2" class="slide level2 smaller">
+<h2>Measurement &amp; Measurement Scales</h2>
 <div>
-<p>A researcher has to evaluate ten wheat varieties in five different research stations for his research. He knows there is one directional soil fertility trend in each research station. Propose an efficient experimental design with its layout and proper randomization for this situation. Provide guidelines to analyze the data giving different sources of variation and their corresponding degrees of freedom in the ANOVA table and suggest any method(s) for inferences beyond ANOVA.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="stability-analysis-5" class="slide level2">
-<h2>Stability Analysis</h2>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Combined ANOVA Table</strong></p>
-</div>
-<div class="callout-content">
-<table>
-<caption><strong>Combined ANOVA Table</strong></caption>
-<thead>
-<tr class="header">
-<th><strong>SOV</strong></th>
-<th style="text-align: right;"><strong>df</strong></th>
-<th style="text-align: right;"><strong>SS</strong></th>
-<th style="text-align: right;"><strong>MS</strong></th>
-<th style="text-align: right;"><strong>F</strong></th>
-<th style="text-align: right;"><strong>P(&gt;F)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Env</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">2249.677</td>
-<td style="text-align: right;">562.419</td>
-<td style="text-align: right;">21.403</td>
-<td style="text-align: right;">&lt; 0.001</td>
-</tr>
-<tr class="even">
-<td>Rep (Env)</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">262.771</td>
-<td style="text-align: right;">26.277</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-</tr>
-<tr class="odd">
-<td>Gen</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">847.700</td>
-<td style="text-align: right;">94.189</td>
-<td style="text-align: right;">3.172</td>
-<td style="text-align: right;">0.002</td>
-</tr>
-<tr class="even">
-<td>Gen x Env</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">1888.211</td>
-<td style="text-align: right;">52.450</td>
-<td style="text-align: right;">1.766</td>
-<td style="text-align: right;">0.016</td>
-</tr>
-<tr class="odd">
-<td>Residual</td>
-<td style="text-align: right;">90</td>
-<td style="text-align: right;">2672.389</td>
-<td style="text-align: right;">29.693</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Measurement}}\)</span>
+<ul>
+<li class="fragment">The process of assigning numbers or labels to objects or states in accordance with specific logically accepted rules.</li>
+</ul></li>
+</ul>
+<p>&nbsp; &nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Measurement Scales}}\)</span>
+<ul>
+<li class="fragment">Data can be classified according to levels of measurement.</li>
+<li class="fragment">The level of measurement of the data often dictates the calculations that can be done to summarize and present the data.</li>
+<li class="fragment">It will also determine the statistical tests that should be performed.</li>
+</ul></li>
+</ul>
 </div>
 </section>
-<section id="ammi-biplot" class="slide level2">
-<h2>AMMI Biplot</h2>
+<section id="measurement-measurement-scales-3" class="slide level2">
+<h2>Measurement &amp; Measurement Scales</h2>
 
-<img data-src="images/AMMIBiplot1.png" width="448" class="r-stretch quarto-figure-center"></section>
-<section id="gge-biplot" class="slide level2">
-<h2>GGE Biplot</h2>
-
-<img data-src="images/GGEBiplot1.png" width="448" class="r-stretch quarto-figure-center"></section>
-<section id="cluster-analysis" class="slide level2">
-<h2>Cluster Analysis</h2>
-
-<img data-src="images/HeatMapGEEffects.png" width="671" class="r-stretch quarto-figure-center"></section></section>
+<img data-src="images/TypesofMeasurementScales.png" width="520" class="r-stretch quarto-figure-center"><p class="caption">Measurement Scales</p></section></section>
 <section>
-<section id="path-analysis" class="title-slide slide level1 center">
-<h1>Path Analysis</h1>
+<section id="types-of-variables" class="title-slide slide level1 center">
+<h1>Types of Variables</h1>
 
 </section>
-<section id="path-analysis-1" class="slide level2">
-<h2>Path Analysis</h2>
-
-<img data-src="images/SEMPathDiagramYear2010.png" width="393" class="r-stretch quarto-figure-center"></section>
-<section id="path-analysis-2" class="slide level2">
-<h2>Path Analysis</h2>
-
-<img data-src="images/PathDiagramSEMLSRE.png" width="260" class="r-stretch quarto-figure-center"></section>
-<section id="path-analysis-3" class="slide level2">
-<h2>Path Analysis</h2>
-
-<img data-src="images/PathDiagramSEMLSRE2.png" width="416" class="r-stretch quarto-figure-center"></section></section>
+<section id="qualitative-quantitative-variables" class="slide level2">
+<h2>Qualitative &amp; Quantitative Variables</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Qualitative}}\)</span>
+<ul>
+<li class="fragment">Nominal or Ordinal variables</li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Quantitative}}\)</span>
+<ul>
+<li class="fragment">Interval or Ratio variables
+<ul>
+<li class="fragment">Discrete</li>
+<li class="fragment">Continuous
+<ul>
+<li class="fragment">Normal</li>
+<li class="fragment">Non-Normal</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="dependent-independent-variables" class="slide level2">
+<h2>Dependent &amp; Independent Variables</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Dependent Variable}}\)</span>
+<ul>
+<li class="fragment">Variable influenced by other variable(s)</li>
+</ul></li>
+</ul>
+<p>&nbsp; &nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Independent Variable}}\)</span>
+<ul>
+<li class="fragment">Variable influencing other variable(s)</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
 <section>
-<section id="references" class="title-slide slide level1 center">
-<h1>References</h1>
+<section id="relationship-bw-variables" class="title-slide slide level1 center">
+<h1>Relationship b/w Variables</h1>
 
 </section>
-<section id="references-1" class="slide level2">
+<section id="dependent-independent-variables-1" class="slide level2 smaller">
+<h2>Dependent &amp; Independent Variables</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Expenditures &amp; Income}}\)</span>
+<ul>
+<li class="fragment">Expenditures are influenced by Income.
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Dependent Variable:}}\)</span> Expenditures</li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Independent Variable:}}\)</span> Income
+<ul>
+<li class="fragment">Expenditures <span style="color:red">←</span> Income</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{CGPA &amp; Study Hours}}\)</span>
+<ul>
+<li class="fragment">CGPA is influenced by Study Hours.
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Dependent Variable:}}\)</span> CGPA</li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Independent Variable:}}\)</span> Study Hours
+<ul>
+<li class="fragment">CGPA <span style="color:red">←</span> Study Hours</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="dependent-independent-variables-2" class="slide level2 smaller">
+<h2>Dependent &amp; Independent Variables</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Landline Phone Bill &amp; Number of Calls}}\)</span>
+<ul>
+<li class="fragment">Landline Phone Bill is affected by Number of Calls made.
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Dependent Variable:}}\)</span> Landline Phone Bill</li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Independent Variable:}}\)</span> No.&nbsp;of Calls
+<ul>
+<li class="fragment">Bill <span style="color:red">←</span> No.&nbsp;of Calls</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Crop Production &amp; Amount of Fertilizer}}\)</span>
+<ul>
+<li class="fragment">Crop Production is influenced by Amount of Fertilizer used.
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Dependent Variable:}}\)</span> Crop Production</li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Independent Variable:}}\)</span> Amount of Fertilizer
+<ul>
+<li class="fragment">Crop Production <span style="color:red">←</span> Amount of Fertilizer</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="types-of-relationship" class="title-slide slide level1 center">
+<h1>Types of Relationship</h1>
+
+</section>
+<section id="mathematical-relationship" class="slide level2">
+<h2>Mathematical Relationship</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Mathematical Relationship}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{red}{\text{Exact Relationship}}\)</span></li>
+<li class="fragment"><span class="math inline">\(Y = f\left(X\right)\)</span></li>
+<li class="fragment"><span class="math inline">\(Y \mathrel{\color{red}\leftarrow} X\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="mathematical-relationship-1" class="slide level2 smaller">
+<h2>Mathematical Relationship</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Relationship between Area and Radius of a Circle}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(A = f\left(r\right)\)</span></li>
+<li class="fragment"><span class="math inline">\(A = \pi r^{2}\)</span></li>
+<li class="fragment"><span class="math inline">\(A \mathrel{\color{red}\leftarrow} r\)</span></li>
+</ul></li>
+</ul>
+<p>&nbsp; &nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Relationship between Landline Phone Bill and Number of Calls made}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\text{Bill} = f\left(\text{No. of Calls}\right)\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Bill} \mathrel{\color{red}\leftarrow} \text{No. of Calls}\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="statistical-relationship" class="slide level2">
+<h2>Statistical Relationship</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Statistical Relationship}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{red}{\text{Inexact or Probabilistic Relationship}}\)</span></li>
+<li class="fragment"><span class="math inline">\(Y = f\left(X\right)+\epsilon\)</span></li>
+<li class="fragment"><span class="math inline">\(Y \mathrel{\color{red}\leftarrow} X\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="statistical-relationship-1" class="slide level2">
+<h2>Statistical Relationship</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Relationship between Expenditures and Income}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\text{Expenditures} = f\left(\text{Income}\right)+\epsilon\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Expenditures} \mathrel{\color{red}\leftarrow} \text{Income}\)</span></li>
+</ul></li>
+</ul>
+<p>&nbsp; &nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Relationship between CGPA and Study Hours}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\text{CGPA} = f\left(\text{Study Hours}\right)+\epsilon\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{CGPA} \mathrel{\color{red}\leftarrow} \text{Study Hours}\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="statistical-models" class="title-slide slide level1 center">
+<h1>Statistical Models</h1>
+
+</section>
+<section id="models" class="slide level2">
+<h2>Models</h2>
+<p>&nbsp; &nbsp;</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<blockquote>
+<p><span class="math inline">\(\color{green}{\textit{All models are wrong,}}\)</span> <span class="math inline">\(\color{green}{\textit{but some are useful.}}\)</span></p>
+</blockquote>
+</div><div class="column" style="width:60%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/GeorgeEPBox.jpg" width="182"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="linear-model" class="slide level2 smaller">
+<h2>Linear Model</h2>
+<p>&nbsp;</p>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Expenditures &amp; Income}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Expenditures are influenced by Income}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Expenditures} \mathrel{\color{red}\leftarrow} \text{Income}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Expenditures &amp; Gender}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Expenditures are influenced by Gender}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Expenditures} \mathrel{\color{red}\leftarrow} \text{Gender}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Expenditures, Income &amp; Gender}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Expenditures are influenced by Income &amp; Gender}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Expenditures} \mathrel{\color{red}\leftarrow} \text{Income} + \text{Gender}\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="linear-model-1" class="slide level2 smaller">
+<h2>Linear Model</h2>
+<p>&nbsp;</p>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{CGPA &amp; Study Hours}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{CGPA is influenced by Study Hours}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{CGPA} \mathrel{\color{red}\leftarrow} \text{Study Hours}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{CGPA &amp; Gender}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{CGPA is influenced by Gender}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{CGPA} \mathrel{\color{red}\leftarrow} \text{Gender}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{CGPA, Study Hours &amp; Gender}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{CGPA is influenced by Study Hours &amp; Gender}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{CGPA} \mathrel{\color{red}\leftarrow} \text{Study Hours} + \text{Gender}\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="linear-model-2" class="slide level2 smaller">
+<h2>Linear Model</h2>
+<p>&nbsp;</p>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Weight Gain &amp; Intake}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Weight Gain is influenced by Intake}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Weight Gain} \mathrel{\color{red}\leftarrow} \text{Intake}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Weight Gain &amp; Feed Type}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Weight Gain is influenced by Feed Type}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Weight Gain} \mathrel{\color{red}\leftarrow} \text{Feed Type}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Weight Gain, Intake &amp; Feed Type}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Weight Gain is influenced by Intake &amp; Feed Type}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Weight Gain} \mathrel{\color{red}\leftarrow} \text{Intake} + \text{Feed Type}\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="linear-model-3" class="slide level2 smaller">
+<h2>Linear Model</h2>
+<p>&nbsp;</p>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Yield &amp; Amount of Fertilizer}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Yield of a crop is influenced by Amount of Fertilizer}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Yield} \mathrel{\color{red}\leftarrow} \text{Amount of Fertilizer}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Yield &amp; Varieties}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Yield of a crop is influenced by Varieties}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Yield} \mathrel{\color{red}\leftarrow} \text{Varieties}\)</span></li>
+</ul></li>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Yield Amount of Fertilizer &amp; Varieties}}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Yield of a crop is influenced by Amount of Fertilizer &amp; Varieties}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{Yield} \mathrel{\color{red}\leftarrow} \text{Amount of Fertilizer} + \text{Varieties}\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="regression-model" class="title-slide slide level1 center">
+<h1>Regression Model</h1>
+
+</section>
+<section id="regression-model-1" class="slide level2">
+<h2>Regression Model</h2>
+<p>&nbsp; &nbsp;</p>
+<ul>
+<li><span class="math inline">\(\color{green}{\text{Quantify the dependency of a Normal variable on}}\)</span> <span class="math inline">\(\color{green}{\text{one or more quantitative variable(s)}}\)</span></li>
+</ul>
+</section>
+<section id="regression-model-2" class="slide level2">
+<h2>Regression Model</h2>
+
+<img data-src="images/PopRegFn.png" width="330" class="r-stretch quarto-figure-center"><p class="caption">Population Regression Function</p></section></section>
+<section>
+<section id="anova-model" class="title-slide slide level1 center">
+<h1>ANOVA Model</h1>
+
+</section>
+<section id="anova-model-1" class="slide level2">
+<h2>ANOVA Model</h2>
+<p>&nbsp;</p>
+<ul>
+<li><span class="math inline">\(\color{green}{\text{Comparing means of Normal dependent variable}}\)</span> <span class="math inline">\(\color{green}{\text{for levels of different factors}}\)</span></li>
+</ul>
+
+<img data-src="images/ANOVANormalMeans.png" width="772" class="r-stretch quarto-figure-center"><p class="caption">ANOVA Model</p></section></section>
+<section>
+<section id="ancova-model" class="title-slide slide level1 center">
+<h1>ANCOVA Model</h1>
+
+</section>
+<section id="ancova-model-1" class="slide level2">
+<h2>ANCOVA Model</h2>
+<p>&nbsp; &nbsp;</p>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Quantify the dependency of a Normal variable on}}\)</span> <span class="math inline">\(\color{green}{\text{one or more quantitative variable(s)}}\)</span></li>
+</ul>
+<p>&nbsp; &nbsp;</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\color{green}{\text{Comparing means of Normal dependent variable}}\)</span> <span class="math inline">\(\color{green}{\text{for levels of different factors}}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="ancova-model-2" class="slide level2">
+<h2>ANCOVA Model</h2>
+
+<img data-src="images/ANCOVA.png" width="307" class="r-stretch quarto-figure-center"><p class="caption">ANCOVA Model</p></section></section>
+<section>
+<section id="treatment-structure" class="title-slide slide level1 center">
+<h1>Treatment Structure</h1>
+
+</section>
+<section id="treatment-structure-1" class="slide level2">
+<h2>Treatment Structure</h2>
+
+<img data-src="images/TreatmentStr2.png" width="364" class="r-stretch quarto-figure-center"><p class="caption">Treatment Structure</p></section>
+<section id="treatment-structure-2" class="slide level2">
+<h2>Treatment Structure</h2>
+
+<img data-src="images/TreatmentStrAnalysis2.png" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Treatment Structure</p></section>
+<section id="references" class="slide level2">
 <h2>References</h2>
-<p>Gomez, K. A. and A. A. Gomez (1984). <em>Statistical Procedures for Agricultural Research</em>. John Wiley &amp; Sons.</p>
-<p>Hinkelmann, K. (2012). <em>Design and Analysis of Experiments, Volume 3: Special Designs and Applications</em>. John Wiley &amp; Sons.</p>
-<p>Hinkelmann, K. and O. Kempthorne (2005). <em>Design and Analysis of Experiments, Volume 2: Advanced Experimental Design</em>. John Wiley &amp; Sons.</p>
-<p>Hinkelmann, K. and O. Kempthorne (2009). <em>Design and Analysis of Experiments, Volume 1: Introduction to Experimental Design</em>. John Wiley &amp; Sons.</p>
+<p>Fox, J. (2015). <em>Applied Regression Analysis &amp; Generalized Linear Models</em>. SAGE Publications, Inc.</p>
+<p>McCulloch, C. E., S. R. Searle, and J. M. Neuhaus (2008). <em>Generalized, Linear, &amp; Mixed Models</em>. John Wiley &amp; Sons.</p>
+<p>Pezzullo, J. C. (2018). <em>Biostatistics for Dummies</em>. John Wiley &amp; Sons, Inc.</p>
+<p>R Core Team (2022). <em>R: A Language &amp; Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria. URL: <a href="http://www.R-project.org/">http://www.R-project.org/</a>.</p>
 </section>
 <section id="references-contd" class="slide level2">
 <h2>References (Cont’d…)</h2>
-<p>Kuehl, R. O. (1999). <em>Design of Experiments: Statistical Principles of Research Design and Analysis</em>. Duxbury Press.</p>
-<p>Mead, R. (1990). <em>The Design of Experiments: Statistical Principles for Practical Applications</em>. Cambridge University Press.</p>
-<p>Mead, R., R. N. Curnow, and A. M. Hasted (1993). <em>Statistical Methods in Agriculture and Experimental Biology</em>. Chapman &amp; Hall/CRC.</p>
-<p>Mead, R., S. Gilmour, and A. Mead (2012). <em>Statistical Principles for the Design of Experiments: Applications to Real Experiments</em>. Cambridge University Press.</p>
-</section>
-<section id="references-contd-1" class="slide level2">
-<h2>References (Cont’d…)</h2>
-<p>Milliken, G. and D. Johnson (1992). <em>Analysis of Messy Data. Volume I: Designed Experiments</em>. CRC Press.</p>
-<p>Petersen, R. G. (1994). <em>Agricultural Field Experiments: Design and Analysis</em>. CRC Press.</p>
-<p>Piepho, H. and R. Edmondson (2018). “A tutorial on the Statistical Analysis of Factorial Experiments with Qualitative and Quantitative treatment factor levels”. In: <em>Journal of Agronomy and Crop Science</em>. DOI: <a href="https://doi.org/10.1111%2Fjac.12267">10.1111/jac.12267</a>. URL: <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jac.12267">https://onlinelibrary.wiley.com/doi/full/10.1111/jac.12267</a>.</p>
-</section>
-<section id="references-contd-2" class="slide level2">
-<h2>References (Cont’d…)</h2>
-<p>R Core Team (2022). <em>R: A Language &amp; Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria. URL: <a href="http://www.R-project.org/">http://www.R-project.org/</a>.</p>
-<p>Stroup, W. W. (2012). <em>Generalized Linear Mixed Models: Modern Concepts, Methods &amp; Applications</em>. CRC Press.</p>
-<p>Yaseen, M., J. Crossa, S. Perez-Elizalde, et al.&nbsp;(2018). <em>bayesammi:Bayesian Estimation of the Additive Main Effects and Multiplicative Interaction Model</em>. R package version 0.1.0.</p>
-</section>
-<section id="references-contd-3" class="slide level2">
-<h2>References (Cont’d…)</h2>
-<p>Yaseen, M. and K. M. Eskridge (2018). <em>stability: Stability Analysis of Genotype by Environment Interaction (GEI)</em>. R package version 0.3.0.</p>
-<p>Yaseen, M., J. Griess, S. Mason, et al.&nbsp;(2014). “Potential use of GGE Bi-plot analysis to evaluate white Sorghum grain attributes for end uses”. In: <em>Pakistan Journal of Agricultural Sciences</em> 51.1, pp. 263-271.</p>
-<p>Yaseen, M., D. Jarquin, S. Perez-Elizalde, et al.&nbsp;(2018). <em>baystability: Bayesian Stability Analysis of Genotype by Environment Interaction (GEI)</em>. R package version 0.1.0.</p>
+<p>Searle, S. R. and M. H. J. Gruber (2016). <em>Linear Models</em>. John Wiley &amp; Sons.</p>
+<p>Sullivan, L. M. (2018). <em>Essentials of Biostatistics in Public Health</em>. Jones &amp; Bartlett Learning.</p>
+<p>Triola, M. F. (2018). <em>Elementary Statistics</em>. Pearson Education, Inc.</p>
+<p>Triola, M. M., M. F. Triola, and J. Roy (2018). <em>Biostatistics for the Biological &amp; Health Sciences</em>. Pearson Education, Inc.</p>
 <div class="footer footer-default">
 <p><span class="math inline">\(\color{green}{\textit{Muhammad Yaseen, PhD (Statistics, UNL-USA)}}\)</span>, <a href="https://myaseen208.com" class="uri">https://myaseen208.com</a></p>
 </div>
